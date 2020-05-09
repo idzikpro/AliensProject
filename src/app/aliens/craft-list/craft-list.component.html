@@ -1,0 +1,89 @@
+<app-header>
+  <p levels>Craft menu</p>
+  <div content>
+    <p></p>
+  </div>
+</app-header>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="data-header">Add craft</div>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="craftForm">
+    <div class="row form-group justify-content-center">
+      <div class="col-sm-12">
+        <table class="cs-table table table-striped" cellpadding="20" cellspacing="20" >
+          <thead>
+          <tr>
+          </tr>
+          </thead>
+        </table>
+        <tbody>
+        <tr>
+          <td>
+            <button (click)="addCraftByName('skyranger')" type="submit" class="btn btn-primary">Skyranger
+            </button>
+          </td>
+          <td>
+            <button (click)="addCraftByName('interceptor')" type="submit" class="btn btn-primary">Interceptor
+            </button>
+          </td>
+          <td>
+            <button (click)="addCraftByName('firestorm')" type="submit" class="btn btn-primary">Firestorm
+            </button>
+          </td>
+          <td>
+            <button (click)="addCraftByName('lightning')" type="submit" class="btn btn-primary">Lightning
+            </button>
+          </td>
+          <td>
+            <button (click)="addCraftByName('avenger')" type="submit" class="btn btn-primary">Avenger
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteAllCraft()" type="submit" class="btn btn-primary" class="text-danger">DELETE ALL
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table *ngIf="craft && craft.length>0; else noCraftInfo" class="cs-table table table-striped">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>picture</th>
+          <th>maxSpeed</th>
+          <th>damageCapacity</th>
+          <th>cargoSpace</th>
+          <th>weaponPods</th>
+          <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cra of craft" class="row-craft" (click)="gotoCraftDetails(cra)">
+          <td appImportant>{{cra.name}}</td>
+          <td><img width="150" height="100" src="http://localhost:8010/craft/images/v1/{{cra.jpg3}}" alt="">
+          </td>
+          <td>{{cra.maxSpeed}}</td>
+          <td>{{cra.damageCapacity}}</td>
+          <td>{{cra.cargoSpace}}</td>
+          <td>{{cra.weaponPods}}</td>
+          <td (click)="removeCraft(cra,$event)">(REMOVE)</td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #noCraftInfo>
+        <div class="no-craft-info">
+          <p>Currently no craft</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

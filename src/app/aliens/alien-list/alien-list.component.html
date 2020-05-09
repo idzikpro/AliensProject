@@ -1,0 +1,121 @@
+<app-header>
+  <p levels>Aliens menu</p>
+  <div content>
+    <p></p>
+  </div>
+</app-header>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="data-header">Add random alien</div>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="alienForm">
+    <div class="row form-group justify-content-center">
+      <div class="col-sm-12">
+        <table class="cs-table table table-striped" cellpadding="20" cellspacing="20" >
+          <thead>
+          <tr>
+          </tr>
+          </thead>
+        </table>
+        <tbody>
+        <tr>
+          <td>
+            <button (click)="addRandomAlien('celatid','')" type="submit" class="btn btn-primary">Celatid
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('chryssalid','')" type="submit" class="btn btn-primary ">Chryssalid
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('cyberdisc','')" type="submit" class="btn btn-primary ">Cyberdisc
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('ethereal','')" type="submit" class="btn btn-primary ">Ethereal
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('floater','')" type="submit" class="btn btn-primary ">Floater
+            </button>
+          </td>
+
+          <td>
+            <button (click)="addRandomAlien('muton','')" type="submit" class="btn btn-primary ">Muton
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('reaper','')" type="submit" class="btn btn-primary ">Reaper
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('sectoid','')" type="submit" class="btn btn-primary ">Sectoid
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('sectopod','')" type="submit" class="btn btn-primary ">Sectopod
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('silacoid','')" type="submit" class="btn btn-primary ">Silacoid
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('snakeman','')" type="submit" class="btn btn-primary ">Snakeman
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomAlien('zombie','')" type="submit" class="btn btn-primary ">Zombie
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteAllAliens()" type="submit" class="btn btn-primary" class="text-danger">DELETE ALL
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table *ngIf="aliens && aliens.length>0; else noAliensInfo" class="cs-table table table-striped">
+        <thead>
+        <tr>
+          <th>race</th>
+          <th>rank</th>
+          <th>picture</th>
+          <th>health</th>
+          <th>strength</th>
+          <th>bravery</th>
+          <th>ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let alien of aliens" class="row-alien" (click)="gotoAlienDetails(alien)">
+          <td appImportant>{{alien?.breed}}</td>
+          <td>{{alien?.rank}}</td>
+          <td><img width="50" height="75" src="http://localhost:8010/aliens/images/v1/{{alien.breed}}"
+                   alt="sectoid"></td>
+
+          <td>{{alien?.health }}</td>
+          <td>{{alien?.strength }}</td>
+          <td>{{alien?.bravery}}</td>
+          <td (click)="removeAlien(alien,$event)">(REMOVE)</td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #noAliensInfo>
+        <div class="no-aliens-info">
+          <p>Currently no aliens</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+

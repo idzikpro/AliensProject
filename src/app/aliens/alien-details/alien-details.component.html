@@ -1,0 +1,170 @@
+<app-header>
+  <p levels>Editing alien stats</p>
+  <div content>
+    <p>{{alien.breed}}</p>
+  </div>
+</app-header>
+<p class="data-header">{{alien.breed}} - {{alien.rank}} </p>
+<div class="data-container">
+  <form [formGroup]="alienForm">
+    <div class="row form-group">
+      <div class="col-md-2">
+        <label>Race</label>
+        <input formControlName="breed" type="text" class="form-control" placeholder="breed">
+        <p *ngIf="!alienForm.get('breed').valid && alienForm.get('breed').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Rank</label>
+        <input formControlName="rank" type="text" class="form-control" placeholder="rank">
+        <p *ngIf="!alienForm.get('rank').valid && alienForm.get('rank').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Energy</label>
+        <input formControlName="energy" type="text" class="form-control" placeholder="energy">
+        <p *ngIf="!alienForm.get('energy').valid && alienForm.get('energy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Time units</label>
+        <input formControlName="timeUnits" type="text" class="form-control" placeholder="timeUnits">
+        <p *ngIf="!alienForm.get('timeUnits').valid && alienForm.get('timeUnits').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Health</label>
+        <input formControlName="health" type="text" class="form-control" placeholder="health">
+        <p *ngIf="!alienForm.get('health').valid && alienForm.get('health').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Reactions</label>
+        <input formControlName="reactions" type="text" class="form-control" placeholder="reactions">
+        <p *ngIf="!alienForm.get('reactions').valid && alienForm.get('reactions').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2">
+        <label>Strength</label>
+        <input formControlName="strength" type="text" class="form-control" placeholder="strength">
+        <p *ngIf="!alienForm.get('strength').valid && alienForm.get('strength').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Bravery</label>
+        <input formControlName="bravery" type="text" class="form-control" placeholder="bravery">
+        <p *ngIf="!alienForm.get('bravery').valid && alienForm.get('bravery').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Firing Acc.</label>
+        <input formControlName="firingAccuracy" type="text" class="form-control" placeholder="firingAccuracy">
+        <p *ngIf="!alienForm.get('firingAccuracy').valid && alienForm.get('firingAccuracy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Throwing Acc.</label>
+        <input formControlName="throwingAccuracy" type="text" class="form-control" placeholder="throwingAccuracy">
+        <p *ngIf="!alienForm.get('throwingAccuracy').valid && alienForm.get('throwingAccuracy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Psi skill</label>
+        <input formControlName="psiSkill" type="text" class="form-control" placeholder="psiSKill">
+        <p *ngIf="!alienForm.get('psiSkill').valid && alienForm.get('psiSkill').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Psi stength</label>
+        <input formControlName="psiStrength" type="text" class="form-control" placeholder="psiStrength">
+        <p *ngIf="!alienForm.get('psiStrength').valid && alienForm.get('psiStrength').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2">
+        <label>Melee Acc.</label>
+        <input formControlName="meleeAccuracy" type="text" class="form-control" placeholder="meleeAccuracy">
+        <p *ngIf="!alienForm.get('meleeAccuracy').valid && alienForm.get('meleeAccuracy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Armour Front</label>
+        <input formControlName="armourFront" type="text" class="form-control" placeholder="armourFront">
+        <p *ngIf="!alienForm.get('armourFront').valid && alienForm.get('armourFront').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Armour Left</label>
+        <input formControlName="armourLeft" type="text" class="form-control" placeholder="armourLeft">
+        <p *ngIf="!alienForm.get('armourLeft').valid && alienForm.get('armourLeft').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Armour Right</label>
+        <input formControlName="armourRight" type="text" class="form-control" placeholder="armourRight">
+        <p *ngIf="!alienForm.get('armourRight').valid && alienForm.get('armourRight').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Armour Rear</label>
+        <input formControlName="armourRear" type="text" class="form-control" placeholder="armourRear">
+        <p *ngIf="!alienForm.get('armourRear').valid && alienForm.get('armourRear').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Armour Under</label>
+        <input formControlName="armourUnder" type="text" class="form-control" placeholder="armourUnder">
+        <p *ngIf="!alienForm.get('armourUnder').valid && alienForm.get('armourUnder').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2">
+        <label>Energy Recovery</label>
+        <input formControlName="energyRecovery" type="text" class="form-control" placeholder="energyRecovery">
+        <p *ngIf="!alienForm.get('energyRecovery').valid && alienForm.get('energyRecovery').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Victory Points</label>
+        <input formControlName="victoryPoints" type="text" class="form-control" placeholder="victoryPoints">
+        <p *ngIf="!alienForm.get('victoryPoints').valid && alienForm.get('victoryPoints').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Aggression</label>
+        <input formControlName="aggression" type="text" class="form-control" placeholder="aggression">
+        <p *ngIf="!alienForm.get('aggression').valid && alienForm.get('aggression').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Intelligence</label>
+        <input formControlName="intelligence" type="text" class="form-control" placeholder="intelligence">
+        <p *ngIf="!alienForm.get('intelligence').valid && alienForm.get('intelligence').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Height St.</label>
+        <input formControlName="heightStanding" type="text" class="form-control" placeholder="heightStanding">
+        <p *ngIf="!alienForm.get('heightStanding').valid && alienForm.get('heightStanding').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-2">
+        <label>Height Kn.</label>
+        <input formControlName="heightKneeling" type="text" class="form-control" placeholder="heightKneeling">
+        <p *ngIf="!alienForm.get('heightKneeling').valid && alienForm.get('heightKneeling').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button [disabled]="alienForm.invalid" (click)="updateAlien()" type="submit" class="btn btn-primary float-right">Update alien</button>
+        <button (click)="alienForm.reset()" class="btn btn-default float-right">Reset</button>
+      </div>
+    </div>
+  </form>
+  <!--<pre> {{alienForm.value | json}}</pre>-->
+  <!--<pre> stan walidacji breed: {{alienForm.get('breed').valid | json}}</pre>-->
+  <!--<pre> stan walidacji rank: {{alienForm.get('rank').valid | json}}</pre>-->
+  <!--<pre> stan walidacji energy: {{alienForm.get('energy').valid | json}}</pre>-->
+  <!--<pre> stan walidacji time units: {{alienForm.get('timeUnits').valid | json}}</pre>-->
+  <!--<pre> stan walidacji health: {{alienForm.get('health').valid | json}}</pre>-->
+  <!--<pre> stan walidacji reactions: {{alienForm.get('reactions').valid | json}}</pre>-->
+  <!--<pre> stan walidacji strength: {{alienForm.get('strength').valid | json}}</pre>-->
+  <!--<pre> stan walidacji bravery: {{alienForm.get('bravery').valid | json}}</pre>-->
+  <!--<pre> stan walidacji firing accuracy: {{alienForm.get('firingAccuracy').valid | json}}</pre>-->
+  <!--<pre> stan walidacji throwing accuracy: {{alienForm.get('throwingAccuracy').valid | json}}</pre>-->
+  <!--<pre> stan walidacji psi skill: {{alienForm.get('psiSkill').valid | json}}</pre>-->
+  <!--<pre> stan walidacji psi strength: {{alienForm.get('psiStrength').valid | json}}</pre>-->
+  <!--<pre> stan walidacji melee accuracy: {{alienForm.get('meleeAccuracy').valid | json}}</pre>-->
+  <!--<pre> stan walidacji armour front: {{alienForm.get('armourFront').valid | json}}</pre>-->
+  <!--<pre> stan walidacji armour left: {{alienForm.get('armourLeft').valid | json}}</pre>-->
+  <!--<pre> stan walidacji armour right: {{alienForm.get('armourRight').valid | json}}</pre>-->
+  <!--<pre> stan walidacji armour rear: {{alienForm.get('armourRear').valid | json}}</pre>-->
+  <!--<pre> stan walidacji armour under: {{alienForm.get('armourUnder').valid | json}}</pre>-->
+  <!--<pre> stan walidacji energy recovery: {{alienForm.get('energyRecovery').valid | json}}</pre>-->
+  <!--<pre> stan walidacji victory points: {{alienForm.get('victoryPoints').valid | json}}</pre>-->
+  <!--<pre> stan walidacji aggression: {{alienForm.get('aggression').valid | json}}</pre>-->
+  <!--<pre> stan walidacji intelligence: {{alienForm.get('intelligence').valid | json}}</pre>-->
+  <!--<pre> stan walidacji height standing: {{alienForm.get('heightStanding').valid | json}}</pre>-->
+  <!--<pre> stan walidacji height kneeling: {{alienForm.get('heightKneeling').valid | json}}</pre>-->
+</div>

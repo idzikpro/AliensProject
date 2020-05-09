@@ -1,0 +1,100 @@
+<app-header>
+  <p levels>Soldiers</p>
+  <div content>
+    <p>Soldier</p>
+  </div>
+</app-header>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="data-header">Add random soldier</div>
+  </div>
+</div>
+<div class=container>
+  <form [formGroup]="soldierForm">
+    <div class="row form-group justify-content-center">
+      <div class="col-sm-12">
+        <table class="cs-table table table-striped" cellpadding="20" cellspacing="20" >
+          <thead>
+          <tr>
+          </tr>
+          </thead>
+        </table>
+        <tbody>
+        <tr>
+          <td>
+            <button (click)="addRandomSoldier('rookie')" type="submit" class="btn btn-primary">Rookie
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomSoldier('squaddie')" type="submit" class="btn btn-primary">Squaddie
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomSoldier('sergeant')" type="submit" class="btn btn-primary">Sergeant
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomSoldier('captain')" type="submit" class="btn btn-primary">Captain
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomSoldier('colonel')" type="submit" class="btn btn-primary">Colonel
+            </button>
+          </td>
+          <td>
+            <button (click)="addRandomSoldier('commander')" type="submit" class="btn btn-primary">Commander
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteAllSoldiers()" type="submit" class="btn btn-primary" class="text-danger">DELETE ALL
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table *ngIf="soldiers && soldiers.length>0; else noSoldiersInfo" class="cs-table table table-striped">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>rank</th>
+          <th>nationality</th>
+          <th>armour</th>
+          <th>missions</th>
+          <th>killed</th>
+          <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let soldier of soldiers" class="row-ship" (click)="gotoSoldierDetails(soldier)">
+          <td>{{soldier.name}}</td>
+          <td><img width="70" height="75" src="http://localhost:8010/ranks/images/v1/{{soldier.rank}}" alt="soldier"></td>
+          <td><img width="70" height="75" src="https://www.countryflags.io/{{soldier.nationality}}/flat/64.png" alt="soldier"></td>
+          <td><img width="70" height="75" src="http://localhost:8010/armours/images/v1/{{soldier.picture}}" alt="soldier"></td>
+          <td>{{soldier.missions}}</td>
+          <td>{{soldier.killed}}</td>
+          <td (click)="removeSoldier(soldier,$event)">(REMOVE)</td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #noSoldiersInfo>
+        <div class="no-soldiers-info">
+          <p>Currently no soldiers</p>
+        </div>
+      </ng-template>
+      <!--<img [src]="imageToShow"-->
+           <!--alt="Place image title"-->
+           <!--*ngIf="!isImageLoading; else noImageFound">-->
+      <!--<ng-template #noImageFound>-->
+        <!--<img src="fallbackImage.png" alt="Fallbackimage">-->
+      <!--</ng-template>-->
+    </div>
+  </div>
+</div>
+
+

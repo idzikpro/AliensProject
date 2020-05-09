@@ -1,0 +1,115 @@
+<app-header>
+  <p levels>Editing ship stats</p>
+  <div content>
+    <p>{{ship.name}}</p>
+  </div>
+</app-header>
+<p class="data-header">{{ship.size}} - {{ship.name}} </p>
+<div class="data-container">
+  <div class="row">
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <td><img width="200" height="150" src="http://localhost:8010/ships/images/v1/{{ship.jpg0}}" alt="ship"></td>
+          <td><img width="200" height="150" src="http://localhost:8010/ships/images/v1/{{ship.jpg1}}" alt="ship"></td>
+          <td><img width="200" height="150" src="http://localhost:8010/ships/images/v1/{{ship.jpg2}}" alt="ship"></td>
+          <td><img width="200" height="150" src="http://localhost:8010/ships/images/v1/{{ship.jpg3}}" alt="ship"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <form [formGroup]="shipForm">
+    <div class="row form-group">
+      <div class="col-md-4">
+        <label>Name</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="name">
+        <p *ngIf="!shipForm.get('name').valid && shipForm.get('name').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-4">
+        <label>Size</label>
+        <input formControlName="size" type="text" class="form-control" placeholder="size">
+        <p *ngIf="!shipForm.get('size').valid && shipForm.get('size').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-4">
+        <label>Max speed</label>
+        <input formControlName="maxSpeed" type="text" class="form-control" placeholder="maxspeed">
+        <p *ngIf="!shipForm.get('maxSpeed').valid && shipForm.get('maxSpeed').dirty" class="error">This field is
+          required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-4">
+        <label>Weapon power</label>
+        <input formControlName="weaponPower" type="text" class="form-control" placeholder="weaponpower">
+        <p *ngIf="!shipForm.get('weaponPower').valid && shipForm.get('weaponPower').dirty" class="error">This field is
+          required</p>
+      </div>
+      <div class="col-md-4">
+        <label>weapon Range Km</label>
+        <input formControlName="weaponRangeKm" type="text" class="form-control" placeholder="weaponrangekm">
+        <p *ngIf="!shipForm.get('weaponRangeKm').valid && shipForm.get('weaponRangeKm').dirty" class="error">This field
+          is required</p>
+      </div>
+      <div class="col-md-4">
+        <label>weaponRangeUnits</label>
+        <input formControlName="weaponRangeUnits" type="text" class="form-control" placeholder="maxspeed">
+        <p *ngIf="!shipForm.get('weaponRangeUnits').valid && shipForm.get('weaponRangeUnits').dirty" class="error">This
+          field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-4">
+        <label>Damage</label>
+        <input formControlName="damageCapacity" type="text" class="form-control" placeholder="damagecapacity">
+        <p *ngIf="!shipForm.get('damageCapacity').valid && shipForm.get('damageCapacity').dirty" class="error">This
+          field is required</p>
+      </div>
+      <div class="col-md-4">
+        <label>Downed</label>
+        <input formControlName="downedPoints" type="text" class="form-control" placeholder="downedpoints">
+        <p *ngIf="!shipForm.get('downedPoints').valid && shipForm.get('downedPoints').dirty" class="error">This field is
+          required</p>
+      </div>
+      <div class="col-md-4">
+        <label>Destroyed</label>
+        <input formControlName="destroyedPoints" type="text" class="form-control" placeholder="destroyedpoints">
+        <p *ngIf="!shipForm.get('destroyedPoints').valid && shipForm.get('destroyedPoints').dirty" class="error">This
+          field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-4">
+        <label>Escape Time</label>
+        <input formControlName="escapeTime" type="text" class="form-control" placeholder="escapetime">
+        <p *ngIf="!shipForm.get('escapeTime').valid && shipForm.get('escapeTime').dirty" class="error">This
+          field is required</p>
+      </div>
+      <div class="col-md-4">
+        <label>Firing Interval</label>
+        <input formControlName="firingInterval" type="text" class="form-control" placeholder="firinginterval">
+        <p *ngIf="!shipForm.get('firingInterval').valid && shipForm.get('firingInterval').dirty" class="error">This field is
+          required</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button [disabled]="shipForm.invalid" (click)="updateShip()" type="submit" class="btn btn-primary float-right">
+          Edit ship
+        </button>
+        <button (click)="shipForm.reset()" class="btn btn-default float-right">Reset</button>
+      </div>
+    </div>
+  </form>
+  <!--<pre> {{shipForm.value | json}}</pre>-->
+  <!--<pre> stan walidacji name: {{shipForm.get('name').valid | json}}</pre>-->
+  <!--<pre> stan walidacji size: {{shipForm.get('size').valid | json}}</pre>-->
+  <!--<pre> stan walidacji max speed: {{shipForm.get('maxspeed').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon power: {{shipForm.get('weaponpower').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon range km: {{shipForm.get('weaponrangekm').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon range units: {{shipForm.get('weaponrangeunits').valid | json}}</pre>-->
+  <!--<pre> stan walidacji damage capacity: {{shipForm.get('damagecapacity').valid | json}}</pre>-->
+  <!--<pre> stan walidacji downed points: {{shipForm.get('downedpoints').valid | json}}</pre>-->
+  <!--<pre> stan walidacji destroyed points: {{shipForm.get('destroyedpoints').valid | json}}</pre>-->
+  <!--<pre> stan walidacji destroyed points: {{shipForm.get('escapeTime').valid | json}}</pre>-->
+  <!--<pre> stan walidacji destroyed points: {{shipForm.get('firingInterval').valid | json}}</pre>-->
+</div>

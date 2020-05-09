@@ -1,0 +1,100 @@
+<app-header>
+  <p levels>Ships menu</p>
+  <div content>
+    <p></p>
+  </div>
+</app-header>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="data-header">Add alien ship</div>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="shipForm">
+    <div class="row form-group justify-content-center">
+      <div class="col-sm-12">
+        <table class="cs-table table table-striped" cellpadding="20" cellspacing="20" >
+          <thead>
+          <tr>
+          </tr>
+          </thead>
+        </table>
+        <tbody>
+        <tr>
+          <td>
+            <button (click)="addShipByName('smallscout')" type="submit" class="btn btn-primary">Small scout
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('mediumscout')" type="submit" class="btn btn-primary ">Medium scout
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('largescout')" type="submit" class="btn btn-primary ">Large scout
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('abductor')" type="submit" class="btn btn-primary ">Abductor
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('harvester')" type="submit" class="btn btn-primary ">Harvester
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('terrorship')" type="submit" class="btn btn-primary ">Terror ship
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('supplyship')" type="submit" class="btn btn-primary ">Supply ship
+            </button>
+          </td>
+          <td>
+            <button (click)="addShipByName('battleship')" type="submit" class="btn btn-primary ">Battleship
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteAllShips()" type="submit" class="btn btn-primary" class="text-danger">DELETE ALL
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table *ngIf="ships && ships.length>0; else noShipsInfo" class="cs-table table table-striped">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>size</th>
+          <th>maxSpeed</th>
+          <th>Damage</th>
+          <th>picture</th>
+          <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ship of ships" class="row-ship" (click)="gotoShipDetails(ship)">
+          <td>{{ship.name}}</td>
+          <td appImportant>{{ship.size}}</td>
+          <td>{{ship.maxSpeed}}</td>
+          <td>{{ship.damageCapacity}}</td>
+          <td><img width="150" height="100" src="http://localhost:8010/ships/images/v1/{{ship.jpg0}}" alt="ship">
+          </td>
+          <td (click)="removeShip(ship,$event)">(REMOVE)</td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #noShipsInfo>
+        <div class="no-ships-info">
+          <p>Currently no ships</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+

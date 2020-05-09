@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/base";
+@import "assets/styles/tables";
+
+.flex-container {
+  display:flex;
+  background-color: lightgreen;
+  flex-direction: column;
+}
+.flex-container > div {
+  background-color: darkgray;
+  margin: 15px;
+  padding: 25px;
+  flex-direction: row;
+}
+img {
+  max-width: 100%;
+}
+.sub-A {
+  background-color: green;
+  margin: 15px;
+  padding: 10px;
+  font-size: 20px;
+}
+.sub-B{
+  background-color: brown;
+  margin: 20px;
+  padding: 30px;
+  font-size: 10px;
+}
+//zawijanie wierszy ze zmianą kierunku
+//flex-flow:row-reverse wrap; połączenie row z wrap
+//flex-wrap:wrap
+
+//wyrównywanie elementów w pionie          dać do nagłówków soldiers?
+//justify-content: center;
+//align-items: center;

@@ -1,0 +1,119 @@
+<app-header>
+  <p levels>Editing soldier stats</p>
+  <div content>
+    <p>Missions {{soldier.missions}}, killed {{soldier.killed}}</p>
+  </div>
+</app-header>
+<p class="data-header">{{soldier.name}} - {{soldier.rank}} </p>
+<div class="data-container">
+  <form [formGroup]="soldierForm">
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Name</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="name">
+        <p *ngIf="!soldierForm.get('name').valid && soldierForm.get('name').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Rank</label>
+        <input formControlName="rank" type="text" class="form-control" placeholder="rank">
+        <p *ngIf="!soldierForm.get('rank').valid && soldierForm.get('rank').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>TU</label>
+        <input formControlName="timeUnits" type="text" class="form-control" placeholder="TU">
+        <p *ngIf="!soldierForm.get('timeUnits').valid && soldierForm.get('timeUnits').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Energy</label>
+        <input formControlName="energy" type="text" class="form-control" placeholder="energy">
+        <p *ngIf="!soldierForm.get('energy').valid && soldierForm.get('energy').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Health</label>
+        <input formControlName="health" type="text" class="form-control" placeholder="health">
+        <p *ngIf="!soldierForm.get('health').valid && soldierForm.get('health').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Bravery</label>
+        <input formControlName="bravery" type="text" class="form-control" placeholder="bravery">
+        <p *ngIf="!soldierForm.get('bravery').valid && soldierForm.get('bravery').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Reactions</label>
+        <input formControlName="reactions" type="text" class="form-control" placeholder="reactions">
+        <p *ngIf="!soldierForm.get('reactions').valid && soldierForm.get('reactions').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Strength</label>
+        <input formControlName="strength" type="text" class="form-control" placeholder="strength">
+        <p *ngIf="!soldierForm.get('strength').valid && soldierForm.get('strength').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Firing Acc.</label>
+        <input formControlName="firingAccuracy" type="text" class="form-control" placeholder="firingAccuracy">
+        <p *ngIf="!soldierForm.get('firingAccuracy').valid && soldierForm.get('firingAccuracy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Throwing Acc.</label>
+        <input formControlName="throwingAccuracy" type="text" class="form-control" placeholder="throwingAccuracy">
+        <p *ngIf="!soldierForm.get('throwingAccuracy').valid && soldierForm.get('throwingAccuracy').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Psi skill</label>
+        <input formControlName="psiSkill" type="text" class="form-control" placeholder="psiSkill">
+        <p *ngIf="!soldierForm.get('psiSkill').valid && soldierForm.get('psiSkill').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Psi strength</label>
+        <input formControlName="psiStrength" type="text" class="form-control" placeholder="psiStrength">
+        <p *ngIf="!soldierForm.get('psiStrength').valid && soldierForm.get('psiStrength').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Armour</label>
+        <input formControlName="armourType" type="text" class="form-control" placeholder="armourType">
+        <p *ngIf="!soldierForm.get('armourType').valid && soldierForm.get('armourType').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Missions</label>
+        <input formControlName="missions" type="text" class="form-control" placeholder="missions">
+        <p *ngIf="!soldierForm.get('missions').valid && soldierForm.get('missions').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Killed</label>
+        <input formControlName="killed" type="text" class="form-control" placeholder="killed">
+        <p *ngIf="!soldierForm.get('killed').valid && soldierForm.get('killed').dirty" class="error">This field is required</p>
+      </div>
+      <div class="col-md-3">
+        <label>Melee Acc.</label>
+        <input formControlName="meleeAccuracy" type="text" class="form-control" placeholder="meleeAccuracy">
+        <p *ngIf="!soldierForm.get('meleeAccuracy').valid && soldierForm.get('meleeAccuracy').dirty" class="error">This field is required</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button [disabled]="soldierForm.invalid" (click)="updateSoldier()" type="submit" class="btn btn-primary float-right">
+          Edit soldier
+        </button>
+        <button (click)="soldierForm.reset()" class="btn btn-default float-right">Reset</button>
+      </div>
+    </div>
+  </form>
+  <!--<pre> {{shipForm.value | json}}</pre>-->
+  <!--<pre> stan walidacji name: {{shipForm.get('name').valid | json}}</pre>-->
+  <!--<pre> stan walidacji size: {{shipForm.get('size').valid | json}}</pre>-->
+  <!--<pre> stan walidacji max speed: {{shipForm.get('maxspeed').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon power: {{shipForm.get('weaponpower').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon range km: {{shipForm.get('weaponrangekm').valid | json}}</pre>-->
+  <!--<pre> stan walidacji weapon range units: {{shipForm.get('weaponrangeunits').valid | json}}</pre>-->
+  <!--<pre> stan walidacji damage capacity: {{shipForm.get('damagecapacity').valid | json}}</pre>-->
+  <!--<pre> stan walidacji downed points: {{shipForm.get('downedpoints').valid | json}}</pre>-->
+  <!--<pre> stan walidacji destroyed points: {{shipForm.get('destroyedpoints').valid | json}}</pre>-->
+</div>
+
+
