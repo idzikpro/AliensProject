@@ -99,7 +99,7 @@
         <tr *ngFor="let alien of aliens" class="row-alien" (click)="gotoAlienDetails(alien)">
           <td appImportant>{{alien?.breed}}</td>
           <td>{{alien?.rank}}</td>
-          <td><img width="50" height="75" src="http://localhost:8010/v1/aliens/images/{{alien.breed}}"
+          <td><img width="50" height="75" src="http://51.91.157.25:8010/v1/aliens/images/{{alien.breed}}"
                    alt="sectoid"></td>
 
           <td>{{alien?.health }}</td>

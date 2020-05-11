@@ -10,9 +10,9 @@ import {Alien} from './models/alien';
 })
 export class SoldiersService {
 
-  private apiUrl = 'http://localhost:8010/v1/soldiers';
-  private apiUrlRandomSoldier = 'http://localhost:8010/v1/soldiers/random';
-  private apiRanks = 'http://localhost:8010/v1/ranks/images';
+  private apiUrl = 'http://51.91.157.25:8010/v1/soldiers';
+  private apiUrlRandomSoldier = 'http://51.91.157.25:8010/v1/soldiers/random';
+  private apiRanks = 'http://51.91.157.25:8010/v1/ranks/images';
 
   constructor(private http: HttpClient) { }
 

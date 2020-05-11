@@ -9,8 +9,8 @@ import {Alien} from './models/alien';
   providedIn: 'root'
 })
 export class ShipsService {
-  private apiUrl = 'http://localhost:8010/v1/ships';
-  private apiUrlShipByName = 'http://localhost:8010/v1/ships/random';
+  private apiUrl = 'http://51.91.157.25:8010/v1/ships';
+  private apiUrlShipByName = 'http://51.91.157.25:8010/v1/ships/random';
 
   constructor(private http: HttpClient) { }
 
