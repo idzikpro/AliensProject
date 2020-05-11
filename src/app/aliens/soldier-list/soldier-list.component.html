@@ -73,9 +73,9 @@
         <tbody>
         <tr *ngFor="let soldier of soldiers" class="row-ship" (click)="gotoSoldierDetails(soldier)">
           <td>{{soldier.name}}</td>
-          <td><img width="70" height="75" src="http://localhost:8010/ranks/images/v1/{{soldier.rank}}" alt="soldier"></td>
+          <td><img width="70" height="75" src="http://localhost:8010/v1/ranks/images/{{soldier.rank}}" alt="soldier"></td>
           <td><img width="70" height="75" src="https://www.countryflags.io/{{soldier.nationality}}/flat/64.png" alt="soldier"></td>
-          <td><img width="70" height="75" src="http://localhost:8010/armours/images/v1/{{soldier.picture}}" alt="soldier"></td>
+          <td><img width="70" height="75" src="http://localhost:8010/v1/armours/images/{{soldier.picture}}" alt="soldier"></td>
           <td>{{soldier.missions}}</td>
           <td>{{soldier.killed}}</td>
           <td (click)="removeSoldier(soldier,$event)">(REMOVE)</td>
