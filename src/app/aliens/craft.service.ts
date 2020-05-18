@@ -11,8 +11,8 @@ import {Alien} from './models/alien';
 })
 export class CraftService {
 
-  private apiUrl = 'http://51.91.157.25:8010/v1/craft';
-  private apiUrlShipByName = 'http://51.91.157.25:8010/v1/craft/random';
+  private apiUrl = 'http://localhost:8010/v1/craft';
+  private apiUrlShipByName = 'http://localhost:8010/v1/craft/random';
 
   constructor(private http: HttpClient) { }
 

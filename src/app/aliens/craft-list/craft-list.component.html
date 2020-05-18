@@ -69,7 +69,7 @@
         <tbody>
         <tr *ngFor="let cra of craft" class="row-craft" (click)="gotoCraftDetails(cra)">
           <td appImportant>{{cra.name}}</td>
-          <td><img width="150" height="100" src="http://51.91.157.25:8010/v1/craft/images/{{cra.jpg3}}" alt="">
+          <td><img width="150" height="100" src="http://localhost:8010/v1/craft/images/{{cra.jpg3}}" alt="">
           </td>
           <td>{{cra.maxSpeed}}</td>
           <td>{{cra.damageCapacity}}</td>

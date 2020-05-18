@@ -8,8 +8,8 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AliensService {
-  private apiUrl = 'http://51.91.157.25:8010/v1/aliens';
-  private apiUrlRandomAlien = 'http://51.91.157.25:8010/v1/aliens/random';
+  private apiUrl = 'http://localhost:8010/v1/aliens';
+  private apiUrlRandomAlien = 'http://localhost:8010/v1/aliens/random';
 
   constructor(private http: HttpClient) { }
 
